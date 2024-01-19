@@ -13,6 +13,9 @@ To start Metro, run the following command from the _root_ of your React Native p
 ```bash
 # Version ReactNative
 0.72.6
+
+# Version Node js
+18.19.0
 ```
 
 ```bash
