@@ -3,3 +3,11 @@ export const colors = {
   logoText: '#FFFFFF',
   gray: '#D9D9D9',
 };
+
+export const generalStyles = {
+  title1: {
+    color: colors.logoText,
+    fontWeight: '800',
+    fontSize: 24,
+  },
+};

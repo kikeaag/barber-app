@@ -1,9 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {colors} from '../styles/general';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {colors, generalStyles} from '../styles/general';
 import SeparatorComponent from '../components/UI/separator/SeparatorComponent';
+import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.background}>
@@ -11,7 +13,8 @@ const HomeScreen = () => {
           <Text style={styles.logo}>BarberApp</Text>
         </View>
         <View>
-          <Text style={styles.title}>Hey Usuario!</Text>
+          <Text style={generalStyles.title1}>Hey Usuario!</Text>
+          <View style={{marginBottom: 10}} />
           <Text style={styles.subtitle}>Sábado, 9 Enero</Text>
           <SeparatorComponent />
           <View style={{marginTop: 20}} />
@@ -28,11 +31,15 @@ const HomeScreen = () => {
           </View>
         </View>
       </View>
-      <View style={styles.containerButton}>
+      <Pressable
+        onPress={() => {
+          navigation.navigate('ChoseBarber' as never);
+        }}
+        style={styles.containerButton}>
         <View style={styles.buttonBottom}>
           <Text style={styles.buttonTextBottom}>Quiero una Cita!</Text>
         </View>
-      </View>
+      </Pressable>
     </View>
   );
 };
@@ -59,9 +66,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    color: colors.logoText,
-    fontWeight: '800',
-    fontSize: 24,
+    // color: colors.logoText,
+    // fontWeight: '800',
+    // fontSize: 24,
     marginBottom: 10,
   },
   subtitle: {
